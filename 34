@@ -1,0 +1,23 @@
+def is_prime(n):
+    if n < 2:
+        return False
+    if n == 2:
+        return True
+    if n % 2 == 0:
+        return False
+    i = 3
+    while i * i <= n:
+        if n % i == 0:
+            return False
+        i += 2
+    return True
+def rotations(s):
+    return [s[i:] + s[:i] for i in range(len(s))]
+count = 0
+for n in range(2, 1_000_000):
+    s = str(n)
+    if len(s) > 1 and any(d in s for d in "024568"):
+        continue
+    if all(is_prime(int(r)) for r in rotations(s)):
+        count += 1
+print(count)
