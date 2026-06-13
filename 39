@@ -1,0 +1,10 @@
+s = ""
+n = 1
+while len(s) < 1_000_000:
+    s += str(n)
+    n += 1
+positions = [1, 10, 100, 1000, 10000, 100000, 1000000]
+product = 1
+for p in positions:
+    product *= int(s[p - 1])  # 0-based indexing
+print(product)
