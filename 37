@@ -1,0 +1,12 @@
+def is_pandigital(s):
+    return len(s) == 9 and set(s) == set("123456789")
+largest = 0
+for x in range(1, 10000):
+    concat = ""
+    n = 1
+    while len(concat) < 9:
+        concat += str(x * n)
+        n += 1
+    if is_pandigital(concat):
+        largest = max(largest, int(concat))
+print(largest)
