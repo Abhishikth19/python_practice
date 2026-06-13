@@ -1,0 +1,7 @@
+from math import factorial
+fact = [factorial(i) for i in range(10)]
+total = 0
+for n in range(10, 2540161):
+    if n == sum(fact[int(d)] for d in str(n)):
+        total += n
+print(total)
