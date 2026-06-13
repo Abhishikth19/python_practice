@@ -1,0 +1,9 @@
+total = 0
+
+for num in range(2, 354295):
+    digit_sum = sum(int(digit) ** 5 for digit in str(num))
+
+    if num == digit_sum:
+        total += num
+
+print(total)
